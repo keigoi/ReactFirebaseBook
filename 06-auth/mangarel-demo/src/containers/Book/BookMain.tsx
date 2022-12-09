@@ -1,14 +1,14 @@
 import React, { FC } from 'react';
-import { useHistory, useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router';
 
 import useBook from 'hooks/use-book';
 import BookMain from 'components/Book/BookMain';
 import paths from 'paths';
 
 const BookMainContainer: FC = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const { bookId } = useParams();
-  if (!bookId) history.replace(paths.home);
+  if (!bookId) navigate(paths.home, {replace:true});
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const { book } = useBook(bookId!);
 

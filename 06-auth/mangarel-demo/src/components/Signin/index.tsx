@@ -1,8 +1,8 @@
 import React, { FC, useContext } from 'react';
-import firebase from 'firebase/app';
-import { useHistory } from 'react-router';
+import firebase from 'firebase';
+import { useNavigate } from 'react-router';
 import styled from '@emotion/styled';
-import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import StyledFirebaseAuth from 'StyledFirebaseAuth';
 import Grid from 'semantic-ui-react/dist/commonjs/collections/Grid';
 import Header from 'semantic-ui-react/dist/commonjs/elements/Header';
 import Message from 'semantic-ui-react/dist/commonjs/collections/Message';
@@ -43,7 +43,7 @@ const GridWrapper = styled.main`
 const Signin: FC = () => {
   const { auth } = useContext(FirebaseContext);
   const { setCredential } = useContext(UserContext);
-  const history = useHistory();
+  const navigate = useNavigate();
   const uiConfig: firebaseui.auth.Config = {
     signInFlow: 'redirect',
     signInOptions: [
@@ -56,7 +56,7 @@ const Signin: FC = () => {
       signInSuccessWithAuthResult: (authResult, redirectUrl) => {
         setCredential(authResult as firebase.auth.UserCredential);
         const dest = redirectUrl || paths.home;
-        history.replace(dest);
+        navigate(dest, {replace:true});
 
         return false;
       },

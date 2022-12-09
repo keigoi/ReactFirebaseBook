@@ -1,5 +1,5 @@
 import React, { FC, useContext } from 'react';
-import { Redirect, Route, Switch } from 'react-router';
+import { Route, Routes } from 'react-router';
 
 import Book from 'components/Book';
 import Home from 'components/Home';
@@ -18,13 +18,13 @@ const App: FC = () => {
     <div>
       <NavigationBar />
       <Spacer />
-      <Switch>
-        <Route path={paths.book} component={Book} />
-        <Route path={paths.home} component={Home} exact />
-        <Route path={paths.search} component={Search} />
-        {!user && <Route path={paths.signin} component={Signin} />}
-        <Redirect to={paths.home} />
-      </Switch>
+      <Routes>
+        <Route path={paths.book} element={<Book/>} />
+        <Route path={paths.home} element={<Home/>} />
+        <Route path={paths.search} element={<Search/>} />
+        {!user && <Route path={paths.signin} element={<Signin/>} />}
+        {/* <Redirect to={paths.home} /> */}
+      </Routes>
     </div>
   );
 };

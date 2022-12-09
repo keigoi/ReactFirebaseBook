@@ -1,6 +1,6 @@
 import React, { FC, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { useHistory, useLocation } from 'react-router';
+import { useNavigate, useLocation } from 'react-router';
 import styled from '@emotion/styled';
 import Sidebar from 'semantic-ui-react/dist/commonjs/modules/Sidebar';
 import Menu from 'semantic-ui-react/dist/commonjs/collections/Menu';
@@ -12,14 +12,14 @@ import paths from 'paths';
 const NavigationBar: FC = () => {
   const { auth } = useContext(FirebaseContext);
   const { user } = useContext(UserContext);
-  const history = useHistory();
+  const navigate = useNavigate();
   const location = useLocation();
   const signOut =
     auth && user
       ? (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
           e.preventDefault();
           auth.signOut();
-          history.replace(paths.home);
+          navigate(paths.home, {replace:true});
         }
       : () => undefined;
 
