@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import styled from '@emotion/styled';
 
-const WideButton: FC<{ color: string }> = ({ color, children }) => {
+const WideButton: FC<{ color: string; children:React.ReactNode }> = ({ color, children }) => {
   const ButtonWrapper = styled.div`
     .ui.button {
       border-style: solid;

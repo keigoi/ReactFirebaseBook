@@ -6,6 +6,6 @@ const Group = styled.div`
   width: auto;
 `;
 
-const ButtonGroup: FC = ({ children }) => <Group>{children}</Group>;
+const ButtonGroup: FC<{children:React.ReactNode}> = ({ children }) => <Group>{children}</Group>;
 
 export default ButtonGroup;

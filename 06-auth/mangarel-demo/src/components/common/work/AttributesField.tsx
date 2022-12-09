@@ -8,7 +8,7 @@ const GridWrapper = styled.div`
   width: auto;
 `;
 
-const ButtonGroup: FC = ({ children }) => (
+const ButtonGroup: FC<{children:React.ReactNode}> = ({ children }) => (
   <GridWrapper>
     <Grid doubling columns={8}>
       {children}

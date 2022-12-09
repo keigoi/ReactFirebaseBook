@@ -6,6 +6,6 @@ const Group = styled.div`
   width: auto;
 `;
 
-const CardGroup: FC = ({ children }) => <Group>{children}</Group>;
+const CardGroup: FC<{children:React.ReactNode}> = ({ children }) => <Group>{children}</Group>;
 
 export default CardGroup;

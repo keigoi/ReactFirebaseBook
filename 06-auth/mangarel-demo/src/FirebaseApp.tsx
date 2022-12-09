@@ -1,14 +1,12 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+import firebase from 'firebase';
 
 import findUser from 'services/mangarel/find-user';
 import writeUser from 'services/mangarel/write-user';
 import { User } from 'services/mangarel/models/user';
 import { FirebaseContext, UserContext } from './contexts';
 
-const FirebaseApp: FC = ({ children }) => {
+const FirebaseApp: FC<{children:React.ReactNode}> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
   const [
     credential,

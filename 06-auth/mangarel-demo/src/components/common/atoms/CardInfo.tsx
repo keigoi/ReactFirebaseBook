@@ -2,7 +2,7 @@ import React, { FC, useContext } from 'react';
 import styled from '@emotion/styled';
 import { ThemeContext } from 'contexts';
 
-const CardInfo: FC = ({ children, ...props }) => {
+const CardInfo: FC<{children:React.ReactNode}> = ({ children, ...props }) => {
   const theme = useContext(ThemeContext);
   const Info = styled.div`
     && {

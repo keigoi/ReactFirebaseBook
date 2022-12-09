@@ -10,6 +10,7 @@ type LinkButtonProps = {
   icon?: SemanticICONS;
   iconElement?: JSX.Element;
   disabled?: boolean;
+  children: React.ReactNode;
 };
 
 const LinkButton: FC<LinkButtonProps> = ({

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import Card from 'semantic-ui-react/dist/commonjs/views/Card';
 import { ThemeContext } from 'contexts';
 
-const CardAttribute: FC = ({ children, ...props }) => {
+const CardAttribute: FC<{children:React.ReactNode}> = ({ children, ...props }) => {
   const theme = useContext(ThemeContext);
   const Attribute = styled(Card.Meta)`
     &&& {
