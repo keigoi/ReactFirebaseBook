@@ -1,5 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import firebase from 'firebase/app';
 
@@ -15,15 +14,15 @@ import './index.css';
 
 firebase.initializeApp(firebaseConfig);
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root') as HTMLElement);
+root.render(
   <BrowserRouter>
     <FirebaseApp>
       <ThemeContext.Provider value={mangarelTheme}>
         <App />
       </ThemeContext.Provider>
     </FirebaseApp>
-  </BrowserRouter>,
-  document.getElementById('root'),
+  </BrowserRouter>
 );
 
 // If you want your app to work offline and load faster, you can change
