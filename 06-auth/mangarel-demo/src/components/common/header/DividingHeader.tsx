@@ -2,9 +2,10 @@ import React, { FC, useContext } from 'react';
 import styled from '@emotion/styled';
 import Header from 'semantic-ui-react/dist/commonjs/elements/Header';
 import Icon from 'semantic-ui-react/dist/commonjs/elements/Icon';
+import generic from 'semantic-ui-react/dist/commonjs/generic';
 import { ThemeContext } from 'contexts';
 
-const DividingHeader: FC<{ icon?: string }> = ({ icon, children }) => {
+const DividingHeader: FC<{ icon?: generic.SemanticICONS; children:React.ReactNode }> = ({ icon, children }) => {
   const theme = useContext(ThemeContext);
   const Heading = styled(Header)`
     border-bottom: 1px solid rgba(34, 36, 38, 0.33) !important;
