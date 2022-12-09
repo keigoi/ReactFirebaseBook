@@ -54,7 +54,7 @@ const useBookSearch = (q: string, options?: searchOptions) => {
           setBooks(booksData);
           setError(null);
         } catch (err) {
-          setError(err);
+          setError(err as any);
         }
         setLoading(false);
       } else {

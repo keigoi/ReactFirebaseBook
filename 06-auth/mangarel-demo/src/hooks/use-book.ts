@@ -25,7 +25,7 @@ const useBook = (id: string) => {
         setBook({ ...bookData, id: doc.id });
         setError(null);
       } catch (err) {
-        setError(err);
+        setError(err as any);
       }
       setLoading(false);
     };
