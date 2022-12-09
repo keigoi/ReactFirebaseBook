@@ -1,4 +1,4 @@
-import { firestore } from 'firebase/app';
+import firebase from 'firebase';
 import { format } from 'date-fns';
 
 import { Book } from 'services/mangarel/models/book';
@@ -40,7 +40,7 @@ const defaultHumanDateOptions: HumanDateOptions = {
 };
 
 export const getHumanDate = (
-  timestamp: firestore.Timestamp | null,
+  timestamp: firebase.firestore.Timestamp | null,
   options?: HumanDateOptions,
 ) => {
   const opts = { ...defaultHumanDateOptions, ...options };

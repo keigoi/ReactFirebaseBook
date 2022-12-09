@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { useContext, useEffect, useRef, useState } from 'react';
+import firebase from 'firebase';
 
 import { Book } from 'services/mangarel/models/book';
 import { collectionName } from 'services/mangarel/constants';

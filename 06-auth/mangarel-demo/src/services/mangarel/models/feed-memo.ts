@@ -1,4 +1,4 @@
-import { firestore } from 'firebase/app';
+import firebase from 'firebase';
 
 export type FeedMemo = {
   id?: string;
@@ -7,8 +7,8 @@ export type FeedMemo = {
   publisher: string | null;
   releaseDate: string | null;
   isbn: string | null;
-  fetchedAt: firestore.Timestamp | null;
-  createdAt: firestore.Timestamp | null;
+  fetchedAt: firebase.firestore.Timestamp | null;
+  createdAt: firebase.firestore.Timestamp | null;
 };
 
 export const blankFeedMemo: FeedMemo = {

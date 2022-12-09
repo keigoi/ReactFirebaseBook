@@ -1,4 +1,4 @@
-import { firestore } from 'firebase/app';
+import firebase from 'firebase';
 import { Author } from './author';
 import { Publisher } from './publisher';
 
@@ -14,9 +14,9 @@ export type Book = {
   rbCode: string;
   hasImage: boolean;
   tokenMap: { [token: string]: boolean } | null;
-  publishedOn: firestore.Timestamp | null;
-  createdAt: firestore.Timestamp | null;
-  updatedAt: firestore.Timestamp | null;
+  publishedOn: firebase.firestore.Timestamp | null;
+  createdAt: firebase.firestore.Timestamp | null;
+  updatedAt: firebase.firestore.Timestamp | null;
 };
 
 export const blankBook: Book = {
